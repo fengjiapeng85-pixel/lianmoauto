@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="color-scheme" content="light dark" />
-    <meta name="description" content="LIANMO Auto Parts — pièces SFGOLD pour fourgonnettes et utilitaires chinois (DFSK, Daewoo Damas, Chang'an, Hafei…). Stock réel à Casablanca, devis rapide sur WhatsApp, livraison partout au Maroc." />
+    <meta name="description" content="LIANMO Auto Parts — pièces SFGOLD pour fourgonnettes et utilitaires chinois (DFSK, Daewoo Damas, Chang'an, Hafei…). Stock réel à Casablanca, devis rapide sur WhatsApp, retrait à l'entrepôt ou livraison à Casablanca." />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
     <title>LIANMO Auto Parts — Catalogue de pièces, stock à Casablanca</title>
@@ -340,14 +340,27 @@
       details.faq .faq-body p{margin:0}
 
       /* ---------- Contact / footer ---------- */
-      .contact-band{background:var(--navy);color:#eaf1f8;border-radius:14px;padding:34px;display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
-      .contact-band h2{margin:0 0 10px;font-size:1.7rem;color:#fff}
-      .contact-band p{margin:0;color:#b9c9da}
+      .contact-band{background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:14px;padding:34px;display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
+      .contact-band h2{margin:0 0 10px;font-size:1.7rem;color:var(--ink)}
+      .contact-band p{margin:0;color:var(--ink-soft)}
       .contact-facts{display:flex;flex-direction:column;gap:10px;font-size:.96rem}
       .contact-facts div{display:flex;gap:10px;align-items:flex-start}
-      .contact-facts svg{flex:none;margin-top:3px;color:var(--gold-bright)}
-      .contact-facts a{color:#fff;font-weight:600}
+      .contact-facts svg{flex:none;margin-top:3px;color:var(--gold)}
+      .contact-facts a{color:var(--navy);font-weight:600}
+      .contact-band .btn-wa{background:var(--navy);color:#fff}
+      .contact-band .btn-wa:hover{background:var(--navy-3)}
+      .contact-band .btn-gold{background:#fff;color:var(--navy);border-color:var(--navy)}
+      .contact-band .btn-gold:hover{background:var(--navy);color:#fff}
       @media (max-width:820px){.contact-band{grid-template-columns:1fr;padding:26px}}
+      @media (prefers-color-scheme: dark){
+        .contact-band{background:var(--navy);color:#eaf1f8;border-color:transparent}
+        .contact-band h2{color:#fff}
+        .contact-band p{color:#b9c9da}
+        .contact-facts svg{color:var(--gold-bright)}
+        .contact-facts a{color:#fff}
+        .contact-band .btn-wa{background:var(--wa);color:#fff}
+        .contact-band .btn-gold{background:var(--gold-bright);color:#231a04;border-color:transparent}
+      }
       footer.site{padding:38px 0 110px;color:var(--ink-soft);font-size:.9rem}
       footer.site .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:26px}
       footer.site h4{color:var(--ink);margin:0 0 12px;font-size:.95rem}
@@ -410,7 +423,7 @@
       <div class="wrap">
         <span class="tb-left">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-          <span data-i18n="topbar_text">Sidi Bernoussi, Casablanca · Livraison partout au Maroc</span>
+          <span data-i18n="topbar_text">Sidi Bernoussi, Casablanca · Retrait à l'entrepôt ou livraison à Casablanca</span>
         </span>
         <a href="https://wa.me/212786772738" target="_blank" rel="noopener">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
@@ -507,7 +520,7 @@
           </div>
           <div class="trust-item">
             <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 18H3c-.6 0-1-.4-1-1V7c0-.6.4-1 1-1h10c.6 0 1 .4 1 1v11"/><path d="M14 9h4l4 4v4c0 .6-.4 1-1 1h-2"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg></span>
-            <div><b data-i18n="trust3_t">Depuis Casablanca, partout au Maroc</b><span data-i18n="trust3_d">Retrait à l'entrepôt ou livraison dans votre ville.</span></div>
+            <div><b data-i18n="trust3_t">Casablanca : retrait ou livraison</b><span data-i18n="trust3_d">Retrait à l'entrepôt de Sidi Bernoussi ou livraison dans Casablanca.</span></div>
           </div>
         </div>
       </div>
@@ -621,25 +634,13 @@
             <div class="step">
               <span class="num">04</span>
               <h3 data-i18n="step4_t">Votre devis</h3>
-              <p data-i18n="step4_d">Vous recevez le prix et les modalités de livraison sur WhatsApp. Retrait à Casablanca ou envoi dans votre ville.</p>
+              <p data-i18n="step4_d">Vous recevez le prix et les modalités de livraison sur WhatsApp. Retrait à l'entrepôt de Sidi Bernoussi ou livraison dans Casablanca.</p>
             </div>
           </div>
           <div class="process-cta">
             <a class="btn btn-wa" href="https://wa.me/212786772738?text=Bonjour%20LIANMO%2C%20je%20cherche%20une%20pi%C3%A8ce%20pour%20mon%20v%C3%A9hicule." target="_blank" rel="noopener" data-i18n="proc_cta">Commencer sur WhatsApp</a>
             <a class="link" href="#faq" data-i18n="proc_link">Comprendre la vérification par VIN →</a>
           </div>
-        </div>
-      </section>
-
-      <!-- Livraison -->
-      <section class="blk" id="livraison">
-        <div class="wrap">
-          <div class="sec-head">
-            <span class="sec-tag" data-i18n="ship_tag">Livraison par ville</span>
-            <h2 data-i18n="ship_h2">Depuis Casablanca, dans tout le Maroc</h2>
-            <p data-i18n="ship_p">Préparez votre demande pour une livraison dans votre ville : les modalités et le délai sont précisés avec votre devis. Touchez votre ville pour démarrer la conversation.</p>
-          </div>
-          <div class="chips" id="cityChips"></div>
         </div>
       </section>
 
@@ -665,7 +666,7 @@
             </details>
             <details class="faq">
               <summary><span data-i18n="faq4_q">Livrez-vous en dehors de Casablanca ?</span><span class="plus">+</span></summary>
-              <div class="faq-body"><p data-i18n="faq4_a">Oui, nous livrons partout au Maroc : Rabat, Tanger, Marrakech, Agadir, Fès, Meknès, Oujda… Les modalités et le délai dépendent de la ville et de la taille de la commande ; ils sont précisés noir sur blanc avec votre devis.</p></div>
+              <div class="faq-body"><p data-i18n="faq4_a">Pour le moment, non : nous servons uniquement Casablanca. Vous pouvez retirer votre commande à notre entrepôt de Sidi Bernoussi, ou demander une livraison dans Casablanca. Les modalités sont précisées avec votre devis.</p></div>
             </details>
             <details class="faq">
               <summary><span data-i18n="faq5_q">Comment se fait le paiement ?</span><span class="plus">+</span></summary>
@@ -734,7 +735,6 @@
             <h4 data-i18n="foot_help_t">Aide</h4>
             <ul>
               <li><a href="#processus" data-i18n="foot_how">Comment commander</a></li>
-              <li><a href="#livraison" data-i18n="foot_ship">Livraison par ville</a></li>
               <li><a href="#faq" data-i18n="foot_faq">Questions fréquentes</a></li>
               <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
             </ul>
@@ -792,7 +792,7 @@
         var LANG = "fr";
         var I18N = {
           fr: {
-            topbar_text: "Sidi Bernoussi, Casablanca · Livraison partout au Maroc",
+            topbar_text: "Sidi Bernoussi, Casablanca · Retrait à l'entrepôt ou livraison à Casablanca",
             nav_home: "Accueil", nav_catalogue: "Catalogue", nav_vehicle: "Choisir mon véhicule",
             nav_categories: "Catégories", nav_brands: "Marques", nav_faq: "FAQ", nav_contact: "Contact",
             devis_btn: "Devis",
@@ -803,7 +803,7 @@
             stat1: "références en stock", stat2: "familles de pièces", stat3: "marques couvertes", stat4: "stock à Casablanca",
             trust1_t: "Stock réel, pas sur commande", trust1_d: "Les pièces du catalogue sont dans notre entrepôt de Sidi Bernoussi.",
             trust2_t: "Vérification par référence ou VIN", trust2_d: "On confirme la compatibilité avant de vous envoyer le devis.",
-            trust3_t: "Depuis Casablanca, partout au Maroc", trust3_d: "Retrait à l'entrepôt ou livraison dans votre ville.",
+            trust3_t: "Casablanca : retrait ou livraison", trust3_d: "Retrait à l'entrepôt de Sidi Bernoussi ou livraison dans Casablanca.",
             finder_tag: "Trouvez votre pièce", finder_h2: "Commencez par votre véhicule",
             finder_p: "Sélectionnez votre marque et votre modèle : le catalogue se filtre sur les pièces qui correspondent.",
             lbl_brand: "Marque", lbl_model: "Modèle", lbl_cat: "Famille de pièces", finder_btn: "Voir les pièces",
@@ -824,7 +824,7 @@
             step1_t: "Votre véhicule", step1_d: "Marque, modèle, année, motorisation : partez du sélecteur ci-dessus ou dites-le-nous directement.",
             step2_t: "Votre sélection", step2_d: "Parcourez le catalogue et ajoutez vos pièces à la demande de devis, ou envoyez une photo de la pièce recherchée.",
             step3_t: "La vérification", step3_d: "Référence d'origine, photo ou VIN : nous confirmons que la pièce correspond bien à votre véhicule.",
-            step4_t: "Votre devis", step4_d: "Vous recevez le prix et les modalités de livraison sur WhatsApp. Retrait à Casablanca ou envoi dans votre ville.",
+            step4_t: "Votre devis", step4_d: "Vous recevez le prix et les modalités de livraison sur WhatsApp. Retrait à l'entrepôt de Sidi Bernoussi ou livraison dans Casablanca.",
             proc_cta: "Commencer sur WhatsApp", proc_link: "Comprendre la vérification par VIN →",
             ship_tag: "Livraison par ville", ship_h2: "Depuis Casablanca, dans tout le Maroc",
             ship_p: "Préparez votre demande pour une livraison dans votre ville : les modalités et le délai sont précisés avec votre devis. Touchez votre ville pour démarrer la conversation.",
@@ -836,7 +836,7 @@
             faq3_q: "Les pièces sont-elles vraiment en stock ?",
             faq3_a: "Oui. Toutes les références du catalogue sont physiquement dans notre entrepôt de Sidi Bernoussi, à Casablanca. Contrairement aux vendeurs qui commandent à l'étranger après votre demande, nous expédions ou remettons la pièce sans attendre une importation.",
             faq4_q: "Livrez-vous en dehors de Casablanca ?",
-            faq4_a: "Oui, nous livrons partout au Maroc : Rabat, Tanger, Marrakech, Agadir, Fès, Meknès, Oujda… Les modalités et le délai dépendent de la ville et de la taille de la commande ; ils sont précisés noir sur blanc avec votre devis.",
+            faq4_a: "Pour le moment, non : nous servons uniquement Casablanca. Vous pouvez retirer votre commande à notre entrepôt de Sidi Bernoussi, ou demander une livraison dans Casablanca. Les modalités sont précisées avec votre devis.",
             faq5_q: "Comment se fait le paiement ?",
             faq5_a: "Après confirmation du devis : par virement bancaire, ou paiement à la livraison selon la commande. Aucun paiement n'est demandé avant que la compatibilité et la disponibilité soient confirmées.",
             faq6_q: "Vous vendez aux particuliers ou seulement aux professionnels ?",
@@ -865,7 +865,7 @@
             doc_title: "LIANMO Auto Parts — Catalogue de pièces, stock à Casablanca"
           },
           zh: {
-            topbar_text: "Sidi Bernoussi，卡萨布兰卡 · 摩洛哥全国配送",
+            topbar_text: "Sidi Bernoussi，卡萨布兰卡 · 仓库自提或市内配送",
             nav_home: "首页", nav_catalogue: "产品目录", nav_vehicle: "按车型找件",
             nav_categories: "产品分类", nav_brands: "品牌", nav_faq: "常见问题", nav_contact: "联系我们",
             devis_btn: "询价单",
@@ -876,7 +876,7 @@
             stat1: "款现货产品", stat2: "大系统分类", stat3: "个覆盖品牌", stat4: "卡萨现货",
             trust1_t: "实仓现货，不用订货", trust1_d: "目录里的配件都在我们 Sidi Bernoussi 的仓库里。",
             trust2_t: "按编号或 VIN 核对", trust2_d: "给你报价之前，先确认配件和车型适配。",
-            trust3_t: "从卡萨发往摩洛哥全国", trust3_d: "可以到仓库自提，也可以配送到你的城市。",
+            trust3_t: "卡萨：自提或市内配送", trust3_d: "到 Sidi Bernoussi 仓库自提，或配送到卡萨市内。",
             finder_tag: "快速找件", finder_h2: "先选你的车型",
             finder_p: "选好品牌和车型，目录会自动筛出适配的配件。",
             lbl_brand: "品牌", lbl_model: "车型", lbl_cat: "配件分类", finder_btn: "查看配件",
@@ -897,7 +897,7 @@
             step1_t: "你的车型", step1_d: "品牌、车型、年份、排量：从上面的选车工具开始，或者直接告诉我们。",
             step2_t: "你的选择", step2_d: "浏览目录，把配件加入询价单，或者直接发一张你要找的配件照片。",
             step3_t: "核对适配", step3_d: "用原厂编号、照片或 VIN 核对，确认配件和你的车完全匹配。",
-            step4_t: "你的报价", step4_d: "价格和配送方式通过 WhatsApp 发给你。卡萨自提，或发到你的城市。",
+            step4_t: "你的报价", step4_d: "价格和配送方式通过 WhatsApp 发给你。Sidi Bernoussi 仓库自提，或配送到卡萨市内。",
             proc_cta: "WhatsApp 开始咨询", proc_link: "了解 VIN 核对 →",
             ship_tag: "按城市配送", ship_h2: "从卡萨布兰卡，发往摩洛哥全境",
             ship_p: "点你的城市直接开始咨询：配送方式和时效会随报价一起确认。",
@@ -909,7 +909,7 @@
             faq3_q: "配件真的是现货吗？",
             faq3_a: "是的。目录里所有配件都实实在在放在卡萨 Sidi Bernoussi 的仓库里。和那些接单后才去国外订货的卖家不同，我们直接发货，不用等进口。",
             faq4_q: "卡萨以外能配送吗？",
-            faq4_a: "可以，摩洛哥全国配送：拉巴特、丹吉尔、马拉喀什、阿加迪尔、非斯、梅克内斯、乌季达……配送方式和时效看城市和订单大小，都会在报价里写清楚。",
+            faq4_a: "目前只做卡萨布兰卡：可以到 Sidi Bernoussi 仓库自提，或配送到卡萨市内。配送方式和时效会在报价里写清楚。",
             faq5_q: "怎么付款？",
             faq5_a: "报价确认后付款：银行转账，或按订单情况货到付款。适配和库存没确认之前，不会让你先付钱。",
             faq6_q: "只卖批发，还是也卖给个人？",
@@ -1044,7 +1044,6 @@
           {name:"Chery", note:"QQ · Fengyun"},
           {name:"Chevrolet", note:"Spark · Lechi"}
         ];
-        var CITIES = ["Casablanca","Rabat","Tanger","Marrakech","Agadir","Fès","Meknès","Oujda","Kénitra","Tétouan","El Jadida","Mohammedia","Béni Mellal","Khémisset","Nador","Laâyoune"];
 
         var state = { q:"", brand:"", model:"", cat:"" };
         var devis = new Map(); // code -> qty
@@ -1287,17 +1286,6 @@
           document.getElementById("catalogue").scrollIntoView({ behavior:"smooth" });
         });
 
-        /* ----- cities ----- */
-        function renderCities(){
-          byId("cityChips").innerHTML = CITIES.map(function(city){
-            var msg = LANG === "zh"
-              ? "你好 LIANMO，我在 "+city+"，想找我车用的配件。请问配送怎么安排？"
-              : "Bonjour LIANMO, je suis à "+city+" et je cherche des pièces pour mon véhicule. Pouvez-vous me renseigner sur la livraison ?";
-            var label = LANG === "zh" ? esc(city)+" 配件咨询" : "Pièces auto "+esc(city);
-            return '<a class="chip" target="_blank" rel="noopener" href="'+waLink(msg)+'">'+label+'</a>';
-          }).join("");
-        }
-        renderCities();
 
         /* ----- mobile nav ----- */
         var burger = byId("burger"), mobileNav = byId("mobileNav");
