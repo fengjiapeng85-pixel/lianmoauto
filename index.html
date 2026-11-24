@@ -262,7 +262,7 @@
         position:absolute;top:10px;right:10px;background:var(--gold-soft);color:#7a5410;
         font-size:.7rem;font-weight:800;padding:5px 9px;border-radius:99px;border:1px solid #e5cf9a;
       }
-      .badge-brand img{height:11px;width:auto;max-width:60px;vertical-align:-1px;margin-right:4px}
+      .badge-brand img{height:11px;width:auto;max-width:60px;vertical-align:-1px}
       .brand-logo{height:46px;max-width:170px;object-fit:contain;align-self:flex-start;background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 12px;margin-bottom:8px}
       .brand-logo-spacer{height:72px}
       @media (prefers-color-scheme: dark){.badge-brand{color:var(--gold-bright);border-color:#5a4a22}}
@@ -1151,7 +1151,7 @@
         function waLink(text){ return "https://wa.me/"+WA+"?text="+encodeURIComponent(text); }
         function cardHTML(p){
           var inDevis = devis.has(p.code);
-          var brandBadge = p.brands.length ? '<span class="badge-brand">'+(BRAND_LOGOS[p.brands[0]] ? '<img src="'+BRAND_LOGOS[p.brands[0]]+'" alt="" />' : '')+esc(p.brands[0])+'</span>' : "";
+          var brandBadge = p.brands.length ? '<span class="badge-brand">'+(BRAND_LOGOS[p.brands[0]] ? '<img src="'+BRAND_LOGOS[p.brands[0]]+'" alt="'+esc(p.brands[0])+'" />' : esc(p.brands[0]))+'</span>' : "";
           var oe = p.oe ? '<div class="card-oe">'+esc(t("oe_label"))+' <span class="mono">'+esc(p.oe)+'</span></div>' : "";
           var nameFr = (LANG === "zh" && PROD_ZH[p.name] && PROD_ZH[p.name] !== p.name)
             ? '<div class="card-name-fr">'+esc(p.name)+'</div>' : "";
