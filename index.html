@@ -599,6 +599,9 @@
             <button class="reset-link" id="resetFilters" type="button" hidden data-i18n="reset_filters">Réinitialiser les filtres</button>
           </div>
           <div class="grid" id="grid"></div>
+          <div style="text-align:center;margin-top:28px" id="showMoreWrap" hidden>
+            <button class="btn btn-navy" id="showMoreBtn" type="button">Voir tout le catalogue</button>
+          </div>
           <div class="empty" id="emptyState" hidden>
             <b data-i18n="empty_t">Aucune pièce ne correspond à cette recherche</b>
             <span data-i18n="empty_d">Essayez un autre mot-clé, ou envoyez-nous la référence de votre ancienne pièce sur WhatsApp : si elle existe pour votre modèle, on vous le dira franchement.</span>
@@ -826,6 +829,7 @@
             cat_p: "Prix sur devis — les tarifs dépendent des quantités, surtout pour les garages et revendeurs. Réponse rapide sur WhatsApp.",
             search_ph: "Rechercher : nom de pièce, référence, n° OE, modèle…",
             reset_filters: "Réinitialiser les filtres",
+            show_all: "Voir tout le catalogue", show_less: "Réduire la liste",
             empty_t: "Aucune pièce ne correspond à cette recherche",
             empty_d: "Essayez un autre mot-clé, ou envoyez-nous la référence de votre ancienne pièce sur WhatsApp : si elle existe pour votre modèle, on vous le dira franchement.",
             empty_btn: "Demander sur WhatsApp",
@@ -899,6 +903,7 @@
             cat_p: "价格询价制 — 价格看数量，修理厂和经销商尤其如此。WhatsApp 快速回复。",
             search_ph: "搜索：配件名称、编号、OE 号、车型…",
             reset_filters: "清除筛选",
+            show_all: "查看全部产品", show_less: "收起",
             empty_t: "没有找到符合的配件",
             empty_d: "换个关键词试试，或者把旧件编号发到 WhatsApp：只要有适配你车型的，我们会如实告诉你。",
             empty_btn: "WhatsApp 咨询",
@@ -1058,6 +1063,9 @@
         ];
 
         var state = { q:"", brand:"", model:"", cat:"" };
+        var PAGE_SIZE = 8;
+        var showAll = false;
+        var lastFilterSig = "";
         var devis = new Map(); // code -> qty
 
         function esc(s){ return String(s).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
@@ -1149,13 +1157,21 @@
         }
         function render(){
           var list = PRODUCTS.filter(matches);
-          byId("grid").innerHTML = list.map(cardHTML).join("");
+          var filtered = state.q || state.brand || state.model || state.cat !== "";
+          var sig = state.q + "|" + state.brand + "|" + state.model + "|" + state.cat;
+          if(sig !== lastFilterSig){ showAll = false; lastFilterSig = sig; }
+          var shown = showAll ? list : list.slice(0, PAGE_SIZE);
+          byId("grid").innerHTML = shown.map(cardHTML).join("");
           byId("emptyState").hidden = list.length > 0;
           byId("resultCount").innerHTML = LANG === "zh"
-            ? "显示 <span>"+list.length+"</span> / "+PRODUCTS.length+" 款配件"
-            : "<span>"+list.length+"</span> référence"+(list.length>1?"s":"")+" affichée"+(list.length>1?"s":"")+" sur "+PRODUCTS.length;
-          var filtered = state.q || state.brand || state.model || state.cat !== "";
+            ? "显示 <span>"+shown.length+"</span> / "+PRODUCTS.length+" 款配件"
+            : "<span>"+shown.length+"</span> référence"+(shown.length>1?"s":"")+" affichée"+(shown.length>1?"s":"")+" sur "+PRODUCTS.length;
           byId("resetFilters").hidden = !filtered;
+          var wrap = byId("showMoreWrap"), btn = byId("showMoreBtn");
+          wrap.hidden = list.length <= PAGE_SIZE;
+          if(list.length > PAGE_SIZE){
+            btn.textContent = showAll ? t("show_less") : t("show_all") + " (" + list.length + ")";
+          }
         }
 
         /* ----- devis drawer ----- */
@@ -1239,6 +1255,12 @@
           q.value = ""; tBrand.value = ""; tCat.value = "";
           byId("fBrand").value = ""; byId("fCat").value = ""; fillModels(byId("fModel"), "");
           render();
+        });
+
+        byId("showMoreBtn").addEventListener("click", function(){
+          showAll = !showAll;
+          render();
+          if(!showAll){ document.getElementById("catalogue").scrollIntoView({ behavior:"smooth" }); }
         });
 
         /* ----- finder ----- */
@@ -1334,7 +1356,7 @@
             el.setAttribute("placeholder", t(el.getAttribute("data-i18n-ph")));
           });
           refreshSelects();
-          renderCats(); renderBrands(); renderCities();
+          renderCats(); renderBrands();
           render(); renderDevis();
         }
         document.querySelectorAll("[data-setlang]").forEach(function(b){
