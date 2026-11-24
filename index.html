@@ -1164,8 +1164,8 @@
           byId("grid").innerHTML = shown.map(cardHTML).join("");
           byId("emptyState").hidden = list.length > 0;
           byId("resultCount").innerHTML = LANG === "zh"
-            ? "显示 <span>"+shown.length+"</span> / "+PRODUCTS.length+" 款配件"
-            : "<span>"+shown.length+"</span> référence"+(shown.length>1?"s":"")+" affichée"+(shown.length>1?"s":"")+" sur "+PRODUCTS.length;
+            ? "显示 <span>"+shown.length+"</span> / "+list.length+" 款配件"
+            : "<span>"+shown.length+"</span> référence"+(shown.length>1?"s":"")+" affichée"+(shown.length>1?"s":"")+" sur "+list.length;
           byId("resetFilters").hidden = !filtered;
           var wrap = byId("showMoreWrap"), btn = byId("showMoreBtn");
           wrap.hidden = list.length <= PAGE_SIZE;
